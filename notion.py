@@ -20,13 +20,11 @@ class Notion(object):
             'date': {"name": "날짜", "type": "date"}
         }
 
-
     def create_table(self):
         ''' Use one-time only '''
         self.child_page = self.page.children.add_new(CollectionViewBlock)
         self.child_page.collection = self.client.get_collection(self.client.create_record('collection', parent=self.child_page, schema=self.table_scheme()))
         self.child_page.title = 'Nature'
-        self.child_page.views.add_new(view_type='table')
 
 
     def set_table_value(self, metadata):
@@ -44,3 +42,4 @@ class Notion(object):
         #print (self.page.parent.id)
         #self.page.remove()
         pass
+    
